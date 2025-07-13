@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # installed apps
-    'django-redis',
+    'django_redis',
     'properties',
 ]
 
@@ -86,12 +86,12 @@ DATABASES = {
         'NAME': 'property_listings',
         'USER': 'property_user',
         'PASSWORD': 'property_password',
-        'HOST': 'postgres',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
 
-REDIS_URL = 'redis://redis:6379/0'
+REDIS_URL = 'redis://localhost:6379/0'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
