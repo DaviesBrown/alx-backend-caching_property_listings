@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # installed apps
+    'django-redis',
     'properties',
 ]
 
@@ -76,12 +77,21 @@ WSGI_APPLICATION = 'alx_backend_caching_property_listings.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'sqlite3': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'property_listings',
+        'USER': 'property_user',
+        'PASSWORD': 'property_password',
+        'HOST': 'postgres',
+        'PORT': '5432',
     }
 }
 
+REDIS_URL = 'redis://redis:6379/0'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
