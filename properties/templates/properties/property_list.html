@@ -10,5 +10,11 @@
             <li>{{ property.title }} - ${{ property.price }}</li>
         {% endfor %}
     </ul>
+    <div class="cache-metrics">
+        <h3>Cache Performance</h3>
+        <p>Hits: {{ cache_metrics.hits }}</p>
+        <p>Misses: {{ cache_metrics.misses }}</p>
+        <p>Hit Ratio: {{ cache_metrics.hit_ratio|floatformat:2 }} ({{ cache_metrics.hit_ratio }})</p>
+    </div>
 </body>
 </html>
